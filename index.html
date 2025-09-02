@@ -1505,7 +1505,8 @@ const dailyNotes = [
     "慢慢來就好了，我會陪妳的",
     "抱抱，喜歡妳喔",
     "今天也一起加油吧",
-    "愛妳喔！"
+    "愛妳喔！",
+    "感覺要走火入魔了“
 ];
 
 function updateDailyNote() {
@@ -1904,6 +1905,12 @@ function updateWeekDates(tableId) {
 // 初始化A和B的週行程表
 initScheduleTable("scheduleTableA", "scheduleBodyA");
 initScheduleTable("scheduleTableB", "scheduleBodyB");
+
+// 確保表格生成完成後再添加固定課程
+setTimeout(() => {
+    addFixedScheduleForAnia();
+    addFixedScheduleForDog();
+}, 100);
 
 // 為 Ania 的行事曆添加固定課程
 function addFixedScheduleForAnia() {
